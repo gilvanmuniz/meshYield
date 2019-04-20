@@ -2,6 +2,7 @@ package com.example.mashyield.model;
 
 public class ProductSize {
 
+    private int id;
     private int pp;
     private int p;
     private int m;
@@ -19,6 +20,14 @@ public class ProductSize {
     }*/
 
     public ProductSize() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getPp() {

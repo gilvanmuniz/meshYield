@@ -30,7 +30,7 @@ public class MeshYieldDataModel {
         queryCriarTabela +=  adult + " NUMERIC, ";
         queryCriarTabela +=  children + " NUMERIC, ";
         queryCriarTabela +=  custom + " NUMERIC ";
-        queryCriarTabela +=  " )";
+        queryCriarTabela +=  ")";
 
         return queryCriarTabela;
     }//fim do metodo criarTabela
