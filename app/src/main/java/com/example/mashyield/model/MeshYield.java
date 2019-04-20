@@ -1,6 +1,6 @@
 package com.example.mashyield.model;
 
-public class MediaMalhas {
+public class MeshYield {
 
     private int id;
     private String product;
@@ -13,7 +13,11 @@ public class MediaMalhas {
     private boolean children;
     private boolean custom;
 
-    public MediaMalhas(){
+    public MeshYield(double weight) {
+        this.weight = weight;
+    }
+
+    public MeshYield(){
 
     }
 

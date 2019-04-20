@@ -3,6 +3,7 @@ package com.example.mashyield.fragments;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,9 +13,12 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.example.mashyield.R;
+import com.example.mashyield.model.MeshYield;
 
 
 public class FragmentLancamentos extends Fragment {
+
+    MeshYield meshYield;
 
     Button btnAdvance;
     TextView txtProduct, txtMesh, txtType, txtColor, txtWeight, txtDate;
@@ -63,6 +67,12 @@ public class FragmentLancamentos extends Fragment {
                 product = editTextProduct.getText().toString();
                 weight = Double.parseDouble(editTextWeight.getText().toString());
                 weightText = Double.toString(weight);
+
+                meshYield = new MeshYield(weight);
+                meshYield.setProduct(product);
+
+
+                Log.i("weight", "Peso: " + meshYield.getWeight() );
             }
         });
 

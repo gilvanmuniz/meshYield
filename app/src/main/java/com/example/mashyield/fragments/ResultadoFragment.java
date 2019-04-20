@@ -13,11 +13,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mashyield.R;
+import com.example.mashyield.model.MeshYield;
 
 
 public class ResultadoFragment extends Fragment {
 
-
+    MeshYield meshYield;
     Button btnSoma;
     TextView txt_Pp, txt_P, txt_M, txt_G, txt_GG, txt_Exg, textView_total;
     EditText editText_Pp, editText_P, editText_M, editText_G, editText_GG, editText_Exg, editText_total;
@@ -66,8 +67,8 @@ public class ResultadoFragment extends Fragment {
                                        public void onClick(View v) {
                                            try {
 
-                                               fragmentLancamentos = new FragmentLancamentos();
-
+                                               meshYield = new MeshYield();
+                                               weight = meshYield.getWeight();
                                                pp =  Integer.parseInt(editText_Pp.getText().toString());
                                                p =  Integer.parseInt(editText_P.getText().toString());
                                                m =  Integer.parseInt(editText_M.getText().toString());
@@ -79,7 +80,7 @@ public class ResultadoFragment extends Fragment {
                                                editText_total.setText(totalStr);
                                                media = total / weight;
 
-                                               Log.i("media: ", "Essa é a média: "+ media);
+                                               Log.i("media: ", "Essa é a média: "+ weight);
 
                                            } catch (Exception e) {
                                                Toast.makeText(context, "Faltou informações", Toast.LENGTH_LONG).show();
