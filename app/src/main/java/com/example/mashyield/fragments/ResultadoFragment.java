@@ -30,7 +30,7 @@ public class ResultadoFragment extends Fragment {
     String productR;
     View view;
 
-    double pp,p, m, g, gg, exg, total;
+    int pp,p, m, g, gg, exg, total;
     String totalStr;
 
     public ResultadoFragment() {
@@ -67,20 +67,19 @@ public class ResultadoFragment extends Fragment {
                                            try {
 
                                                fragmentLancamentos = new FragmentLancamentos();
-                                               weight = fragmentLancamentos.weight;
-                                               productR = fragmentLancamentos.product;
-                                               pp =  Double.parseDouble(editText_Pp.getText().toString());
-                                               p =  Double.parseDouble(editText_P.getText().toString());
-                                               m =  Double.parseDouble(editText_M.getText().toString());
-                                               g =  Double.parseDouble(editText_G.getText().toString());
-                                               gg =  Double.parseDouble(editText_GG.getText().toString());
-                                               exg =  Double.parseDouble(editText_Exg.getText().toString());
+
+                                               pp =  Integer.parseInt(editText_Pp.getText().toString());
+                                               p =  Integer.parseInt(editText_P.getText().toString());
+                                               m =  Integer.parseInt(editText_M.getText().toString());
+                                               g =  Integer.parseInt(editText_G.getText().toString());
+                                               gg =  Integer.parseInt(editText_GG.getText().toString());
+                                               exg =  Integer.parseInt(editText_Exg.getText().toString());
                                                total =  pp + p + m + g + gg + exg;
-                                               totalStr = Double.toString(total);
+                                               totalStr = Integer.toString(total);
                                                editText_total.setText(totalStr);
                                                media = total / weight;
 
-                                               Log.i("media: ", "Essa é a média: "+ productR);
+                                               Log.i("media: ", "Essa é a média: "+ media);
 
                                            } catch (Exception e) {
                                                Toast.makeText(context, "Faltou informações", Toast.LENGTH_LONG).show();
